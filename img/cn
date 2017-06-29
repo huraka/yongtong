@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="utf-8" />
+    <title>菊风 – 致力于领先的移动视频通信解决方案, 从SDK到APP，一应俱全。</title>
+    <meta name="generator" content="GravCMS" />
+<meta name="description" content="My Grav Site" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="baidu-site-verification" content="zxpQxJpeK9" />
+	<meta name="keywords" content="real time, video call, Unified Communication, VoIP, VoLTE, Rich Communication Suite RCS/RCS-e, Cross-platform (PC、Android、iPhone、iPad、Web)，SIP, media engine, Media Engine, IMS, joyn,ims,rcs, sip, protocol, stack, sdp, xcap rtp, xml, oma, 3gpp, stack,jjob,voip,joyn" />
+	<meta name="keywords" content="实时多媒体通信 , 融合通信 , VoIP, Rich Communication Suite RCS/RCS-e, SIP , VoLTE,多媒体引擎，Media Engine, IMS, joyn, 视频通话,移动视频通信, 移动IP语音,富通信套件，移动音视频引擎" />
+    <link rel="icon" type="image/png" href="/user/themes/mytheme/images/favicon.ico" />
+    <link rel="canonical" href="http://www.juphoon.com/cn" />
+
+                    
+                        <link href="/user/themes/mytheme/css/juphoon.css" type="text/css" rel="stylesheet" />
+<link href="/user/themes/mytheme/css/extra.css" type="text/css" rel="stylesheet" />
+<link href="/user/plugins/markdown-notices/assets/notices.css" type="text/css" rel="stylesheet" />
+<link href="/user/plugins/login/css/login.css" type="text/css" rel="stylesheet" />
+
+
+                                                                    <script src="/user/themes/mytheme/js/jquery.js" type="text/javascript" ></script>
+<script src="/user/themes/mytheme/js/jquery.jcarousellite.js" type="text/javascript" ></script>
+<script src="/user/themes/mytheme/js/frogweb5.js" type="text/javascript" ></script>
+<script src="/user/themes/mytheme/js/drupal.js" type="text/javascript" ></script>
+<script src="/user/themes/mytheme/js/compat.js" type="text/javascript" ></script>
+<script src="/user/themes/mytheme/js/panels.js" type="text/javascript" ></script>
+<script src="/user/themes/mytheme/js/hsv2fkl.js" type="text/javascript" ></script>
+
+	<script type="text/javascript">
+	    function cs(id)  
+	    {
+	       if(document.all){
+	          document.getElementById(id).click();    
+	        }        
+	     else
+	    {
+	      var evt = document.createEvent("MouseEvents");
+	       evt.initEvent("click",true,true);
+	       document.getElementById(id).dispatchEvent(evt);
+	     }  
+	   } 
+	   function show_tel(){
+		$("#tel_detail").show();
+	   }
+	   function close_tel(){
+		$("#tel_detail").hide();
+	   }
+	   function submit_tel_info(){
+		$.post('./email_script/consultation.php',"name="+$("#nick").val()+"&company="+$("#company").val()+"&phone="+$("#phone").val(),function(data){
+			if(data.status){
+				close_tel();
+			}else{
+				alert(data.msg);
+			}
+		},'json')
+	   }
+	</script>
+</head>
+<body>
+<div id="sb-site">
+        <div class="body-contant" align="center">
+<div class="header" align="center">
+<div id="head_top">
+<div id="head">
+	<div id="top">
+	<div class="top_kd"></div>
+	<div class="body-contant">
+		<div class="top_left">
+		<div><a href="/cn"><span class="logo">Juphoon</span></a></div>
+		</div>
+		<div class="top_left">
+		<div class="logo_div_lit"><span class="logo_lit">Usable, Simple, Elegant</span></div>
+		</div>
+		<div class="top_right">
+		<div class="top_lk">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tbody>
+				<tr>
+																			<td><a href="/cn/products/"><span id="products" class="top_dh">产品</span></a></td>
+					<td width="20px"></td>
+																				<td><a href="/cn/solutions/"><span id="solutions" class="top_dh">解决方案</span></a></td>
+					<td width="20px"></td>
+																				<td><a href="/cn/services/sdk-license.htm"><span id="services" class="top_dh">服务</span></a></td>
+					<td width="20px"></td>
+																				<td><a href="/cn/about/"><span id="about" class="top_dh">关于我们</span></a></td>
+					<td width="20px"></td>
+																				<td><a href="/cn/contact/"><span id="contact" class="top_dh">联系我们</span></a></td>
+					<td width="20px"></td>
+																				<td><a href="http://justalk.com/cn/" target="_blank"><span id="justalk" class="top_dh">JusTalk</span></a></td>
+					<td width="20px"></td>
+																				<td><a href="http://justalkcloud.com/cn/" target="_blank"><span id="cloud" class="top_dh">JusTalk Cloud</span></a></td>
+					<td width="20px"></td>
+																			<td><a id="switch_lang" tag="en" href="javascript:void(0);"><span class="top_dh">English</span></a></td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+		</div>
+		<div class="clear_left"></div>
+	</div>
+</div>
+</div>
+<div class="top_xian"></div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	var urla = this.location.href;
+	var pos=urla.lastIndexOf("/");
+	var pos1=urla.lastIndexOf("/en");
+	if(pos1>0){
+		var new_url=urla.replace('/en','/cn');
+	}else{
+		var new_url=urla.replace('/cn','/en');
+	}
+    var a = urla.substring(pos+1);
+    var language = a+'/';
+	var lang=$("#switch_lang").attr('tag');
+	$("span[id = "+ language +"]").removeClass('top_dh');
+	$("span[id = "+ language +"]").addClass('top_dh_on');
+	$("#switch_lang").attr("href",new_url);
+});
+</script>
+
+<script>
+    var urla = window.location.href;
+    var url = urla.split('/');
+    var last = url[4];
+    switch(last){
+                    case 'products':
+            $('#products').addClass('top_dh_on');
+            break;
+                case 'solutions':
+            $('#solutions').addClass('top_dh_on');
+            break;
+                case 'services':
+            $('#services').addClass('top_dh_on');
+            break;
+                case 'about':
+            $('#about').addClass('top_dh_on');
+            break;
+                case 'contact':
+            $('#contact').addClass('top_dh_on');
+            break;
+                case 'justalk':
+            $('#justalk').addClass('top_dh_on');
+            break;
+                case 'cloud':
+            $('#cloud').addClass('top_dh_on');
+            break;
+                }
+
+</script>		
+        
+                                <div id=""></div>
+        <div class="top_xian"></div>
+</div>
+<div id="top_k"></div>
+<div class="change_div" align="center">
+<section class="content" id="block-frogweb-1">      
+<a class="controls" id="prev">Prev</a>      
+<a class="controls" id="next">Next</a>
+<div class="item-list">
+<ul>
+<li id="item-0">
+<article class="node feature teaser">
+<a href="http://justalkcloud.com/cn/"><img src="/images/3/e/2/3/6/3e2362bbc2141bb78ffa89b8be1db64f27c9408e-h8.png" alt="JusTalk Cloud 跨平台移动视频通讯云" title="" width="100%" height="528" /></a>
+<div class="caption" align="left">
+<h3 class="h_title">
+<a class="h_cont" href="http://justalkcloud.com/cn/"><span class="home_t">JusTalk Cloud 最懂你的音视频云通讯</span></a>
+</h3>
+<p class="h1_cont" >快捷开发，稳定服务。专注为在线教育、企业通讯、在线医疗、O2O、社交通讯、游戏通讯等领域提供专业的行业解决方案。与众不同，从这里开始。</p>
+</div>
+</article>
+</li>
+<li id="item-1">
+<article class="node feature teaser">
+<a href="cn/about/news-events.htm?ID=2015"><img src="/images/8/b/7/0/6/8b7061d7786554c533e2fadcdae536c4ea713afb-h7-1.png" alt="菊风登陆上海" title="" width="100%" height="528" /></a>
+<div class="caption" align="left">
+<h3 class="h_title">
+<a class="h_cont" href="cn/about/news-events.htm?ID=2015"><span class="home_t">菊风登陆上海</span></a>
+</h3>
+<p class="h1_cont" >GMSA 2015世界移动大会在上海盛大开展！2015.7.15—7.17三天时间，菊风在W5.B90等你！我们把业内领先的融合通信和云平台解决方案展示给你。万事俱备，只等风来。</p>
+</div>
+</article>
+</li>
+<li id="item-2">
+<article class="node feature teaser">
+<a href="cn/solutions/rcs-client.htm"><img src="/images/a/7/0/d/2/a70d274a0d9932bcc77ef27f4632e08959cc585d-h0.jpeg" alt="融合通信 RCS 解决方案" title="" width="100%" height="528" /></a>
+<div class="caption" align="left">
+<h3 class="h_title">
+<a class="h_cont" href="cn/solutions/rcs-client.htm"><span class="home_t">融合通信 RCS 解决方案</span></a>
+</h3>
+<p class="h1_cont" >提供融合通信 Native 方案、RCS SDK 和 RCS APP，符合 GSMA RCS 5.1规范，中国移动下一代融合通信 NGCC 最新标准。</p>
+</div>
+</article>
+</li>
+<li id="item-3">
+<article class="node feature teaser">
+<a href="http://justalk.com/cn/"><img src="/images/0/4/c/6/8/04c680cb70b97efd9fde83784b89e158fbaf3677-h6.jpeg" alt="JusTalk" title="" width="100%" height="528" /></a>
+<div class="caption" align="left">
+<h3 class="h_title">
+<a class="h_cont" href="http://justalk.com/cn/"><span class="home_t">JusTalk 焕然一新</span></a>
+</h3>
+<p class="h1_cont" >JusTalk 全新发布。全新的视觉、版式设计，支持通话中访问通讯录，支持视频通话中移除本地预览。</p>
+</div>
+</article>
+</li>
+<li id="item-4">
+<article class="node feature teaser">
+<a href="cn/products/justex.htm"><img src="/images/f/8/9/9/5/f8995408dd9a4ef9e1b0585dc443045428be5d6b-h7.jpeg" alt="JusTex" title="" width="100%" height="528" /></a>
+<div class="caption" align="left">
+<h3 class="h_title">
+<a class="h_cont" href="cn/products/justex.htm"><span class="home_t">BYOD 时代，<br/>办公室分机带着走</span></a>
+</h3>
+<p class="h1_cont" >JusTex 是一款 SIP 协议的 VoIP 电话（软电话）。它可以和 IP-PBX 或软交换连接，在移动手机上，也可以用固话号码呼叫或接听办公固话。</p>
+</div>
+</article>
+</li>
+<li id="item-5">
+<article class="node feature teaser">
+<a href="cn/products/joyn.htm"><img src="/images/b/4/e/b/5/b4eb52f6e961d441de511c6adffd9c74f8ab3ea5-h5.jpeg" alt="Plug-in Cars Hit the Fast Lane" title="" width="100%" height="528" /></a>
+<div class="caption" align="left">
+<h3 class="h_title">
+<a class="h_cont" href="cn/products/joyn.htm"><span class="home_t">你好 joyn！</span></a>
+</h3>
+<p class="h1_cont" >就在那里！就是好用！</p>
+</div>
+</article>
+</li>
+<li id="item-6">
+<article class="node feature teaser">
+<a href="cn/services/oem-odm-service.htm"><img src="/images/c/7/9/9/f/c799f6bd269819b5d2bbab11e572fa7270eeab5c-h3.jpeg" alt="The Virtual Personal Shopper" title="" width="100%" height="528" /></a>
+<div class="caption" align="left">
+<h3 class="h_title">
+<a class="h_cont" href="cn/services/oem-odm-service.htm"><span class="home_t">一切都已经准备好了</span></a>
+</h3>
+<p class="h1_cont" >我们提供专业可靠的 RCS 定制服务，帮您降低研发成本，快速将产品推向市场：一次性搞定用户体验设计、视觉设计、GUI 开发、SIP 业务开发、多媒体实时处理！</p>
+</div>
+</article>
+</li>
+<li id="item-7">
+<article class="node feature teaser">
+<a href="cn/solutions/voice-video-engine.htm"><img src="/images/8/3/d/7/2/83d72a2e9c3f847e48f1f9fce68cdcc54f5c94d5-h2.jpeg" alt="Imagining Power" title="" width="100%" height="528" /></a>
+<div class="caption" align="left">
+<h3 class="h_title">
+<a class="h_cont" href="cn/solutions/voice-video-engine.htm"><span class="home_t">超越距离，<br />让一切触手可及</span></a>
+</h3>
+<p class="h1_cont" >音视频通话应用如此普遍的年代，怎样脱颖而出？我们以全新的音视频引擎为内核, 推出了高清音视频通话业务。出差在外也能在家给女儿讲睡前故事，距离不再是问题！</p>
+</div>
+</article>
+</li>
+</ul>
+</div>
+</section>
+</div>
+
+            <div id=""></div>
+        <div id="news" class="news_div">
+	<div class="middle_news_kd"></div>
+	<div class="body-contant">
+		<div class="news_left" align="left">
+			<div class="body-contant"><a href="cn/about/news-events.htm"><span class="news_title">新闻中心</a></div>
+			<div class="news_title_xian"></div>
+			<div class="body-contant" align="left">
+										<div id="event0" style="width: 100%;">
+					<div class="news_kd"></div>
+					<div class="body-contant"><a href=""><span class="news_title_lit">JusTalk Cloud 亮相2016中国广州国际教育展览会 畅谈智慧教育</span></a></div>
+					<div class="news_lit_kd"></div>
+					<div style="width: 100%;"><a href=""><span class="news_cont">此次展览会将会聚合上千名教育业界领导精英参与。作为智慧应用软件及服务行业的领航者，全球领先的移动视频软件开发商, JusTalk Cloud 音视频通讯云有幸参与到华南乃至全中国瞩目的智慧教育盛会，届时将在A816展位为与会人士展示 JusTalk Cloud 领先的云通讯技术和在线教育解决方案，并接受产品答疑与合作洽谈。</span></a></div>
+				</div>
+							<div id="event1" style="width: 100%;">
+					<div class="news_kd"></div>
+					<div class="body-contant"><a href=""><span class="news_title_lit">菊风管理层给全体员工的一封信</span></a></div>
+					<div class="news_lit_kd"></div>
+					<div style="width: 100%;"><a href=""><span class="news_cont">致菊风的全体同仁，大家新年好！今天是2015年最后的一天，我代表菊风的管理层（钱晓炯、吕锐、刘谦、陈兴桃、王思前、黄连港）感谢大家这一年的辛勤的工作。</span></a></div>
+				</div>
+							<div id="event2" style="width: 100%;">
+					<div class="news_kd"></div>
+					<div class="body-contant"><a href=""><span class="news_title_lit">2015年世界移动大会</span></a></div>
+					<div class="news_lit_kd"></div>
+					<div style="width: 100%;"><a href=""><span class="news_cont">由 GSMA 举办的2015年世界移动大会将于7月15日—17日在上海新国际博览中心举行，这将是菊风公司第三次亮相国际性盛会。本次展会菊风将推出业内领先的 RCS 融合通信解决方案，以及面向移动医疗，在线教育、O2O、社交通讯及中小运营商等行业客户的 JusTalk Cloud 云通讯解决方案。 </span></a></div>
+				</div>
+									</div>
+		</div>
+		<div class="news_left_kd" align="left">&nbsp;</div>
+		<div class="news_left" align="left">
+			<div class="body-contant"><a href="cn/about/expertise.htm"><span class="news_title">我们的专长</span></a></div>
+			<div class="news_title_xian"></div>
+			<div class="body-contant" align="left">
+										<div id="exp0" class="body-contant">
+					<div class="news_kd"></div>
+					<div class="body-contant">
+						<table border="0" cellpadding="0" cellspacing="0">
+						    <tbody>
+						        <tr>
+						            <td valign="top">
+						            <div><a href=""><img src="/images/d/3/6/7/8/d3678b3369c42ec9d46f3484d1239f29cacaaeea-home1.png" width="100" height="90" style="margin-top: 4px;" alt="" /></a></div>
+						            </td>
+						            <td width="10px">&nbsp;</td>
+						            <td valign="top">
+						            <div style="width: 207px;">
+						            <div class="body-contant"><a href=""><span class="news_title_lit">VoIP 和移动 VoIP</span></a></div>
+						            <div class="news_lit_kd"></div>
+						            <div class="body-contant"><a href=""><span class="news_cont">4G 时代传统电话业务正逐渐“褪色”，VoIP 异军突起，成为一种大众的沟通时尚，对电信行业产生革命性的影响。</span></a></div>
+						            </div>
+						            </td>
+						        </tr>
+						    </tbody>
+						</table>
+					</div>
+				</div>
+							<div id="exp1" class="body-contant">
+					<div class="news_kd"></div>
+					<div class="body-contant">
+						<table border="0" cellpadding="0" cellspacing="0">
+						    <tbody>
+						        <tr>
+						            <td valign="top">
+						            <div><a href=""><img src="/images/e/3/e/7/e/e3e7e0db8b5fda9abdb70989ca64bd6276dbab34-home2.png" width="100" height="90" style="margin-top: 4px;" alt="" /></a></div>
+						            </td>
+						            <td width="10px">&nbsp;</td>
+						            <td valign="top">
+						            <div style="width: 207px;">
+						            <div class="body-contant"><a href=""><span class="news_title_lit">RCS 和 joyn</span></a></div>
+						            <div class="news_lit_kd"></div>
+						            <div class="body-contant"><a href=""><span class="news_cont">RCS、joyn 是融合了音视频通话、即时消息、文件及位置共享、状态呈现及社区网络等多种通信方式……</span></a></div>
+						            </div>
+						            </td>
+						        </tr>
+						    </tbody>
+						</table>
+					</div>
+				</div>
+							<div id="exp2" class="body-contant">
+					<div class="news_kd"></div>
+					<div class="body-contant">
+						<table border="0" cellpadding="0" cellspacing="0">
+						    <tbody>
+						        <tr>
+						            <td valign="top">
+						            <div><a href=""><img src="/images/1/2/9/6/5/12965137fcc57c91b53de942cc5393acc05233a6-home3.png" width="100" height="90" style="margin-top: 4px;" alt="" /></a></div>
+						            </td>
+						            <td width="10px">&nbsp;</td>
+						            <td valign="top">
+						            <div style="width: 207px;">
+						            <div class="body-contant"><a href=""><span class="news_title_lit">多媒体实时通信</span></a></div>
+						            <div class="news_lit_kd"></div>
+						            <div class="body-contant"><a href=""><span class="news_cont">随着音视频编解码技术的飞速发展和 VoIP、RCS 等网络通信业务的迅速兴起，高清音视频通话已成为一种时尚的大众沟通方式。</span></a></div>
+						            </div>
+						            </td>
+						        </tr>
+						    </tbody>
+						</table>
+					</div>
+				</div>
+									</div>
+		</div>
+		<div class="news_left_kd" align="left">&nbsp;</div>
+        <div class="news_left" align="left">
+            <div class="body-contant"><a href="cn/solutions/sip.htm"><span class="news_title">SIP 应用</span></a></div>
+            <div class="news_title_xian"></div>
+            <div class="body-contant" align="left">
+                <div id="sip1" class="body-contant">
+                    <div class="news_kd"></div>
+                    <div class="body-contant">
+                        <div><a href="cn/solutions/sip.htm"><img src="/images/6/5/2/9/a/6529a09e59109f52e78029db9c115b94dfca22bc-home4.png" width="318" height="147" alt="" /></a></div>
+                    </div>
+                </div>
+                <div id="sip2" class="body-contant">
+                    <div class="news_lit_kd"></div>
+                    <div class="body-contant"><a href="cn/solutions/sip.htm">
+                                                            <span class="news_cont">会话初始协议（Session Initiation Protocol，缩写 SIP） 是一个由 IETF MMUSIC 工作组开发的协议，作为标准被提议用于建立，修改和终止包括视频、 语音、即时通信、在线游戏和虚拟现实等多种多媒体元素在内的交互式用户会话。 SIP 已被正式批准成为3GPP 信令协议之一，并成为 IMS 体系结构的一个永久单元。</span><br />
+                                        <span class="news_cont">SIP 协议被用于建立、修改和终止包括视频、语音、即时通信、在线游戏和虚拟现实等多种多媒体元素在内的交互式用户会话。</span><br />
+                                                            </a></div>
+                </div>
+            </div>
+        </div>
+        <div class="clear_left"></div>
+    </div>
+</div>
+
+                <div class="cont_middle_footer_kd"></div>
+<!-- footer start -->
+<div align="center" id="footer" class="footer_bg">
+	<div class="footer_div">
+		<div class="footer_kd"></div>
+		<div align="left" id="footer_content" class="body-contant">
+									<div class="footer_left">
+														<div><span class="footer_title">开发者解决方案</span></div>
+								<div class="footer_title_xian"></div>
+													
+				<div class="footer_title_margin"><a href="/cn/solutions/rcs-client.htm" target="">RCS 客户端开发包</a></div>
+																<div class="footer_cont_margin"><a href="/cn/solutions/joyn-client.htm" target="">joyn 客户端开发包</a></div>
+																<div class="footer_cont_margin"><a href="/cn/solutions/voip-client.htm" target="">VoIP 客户端开发包</a></div>
+																<div class="footer_cont_margin"><a href="/cn/solutions/volte-client.htm" target="">VoLTE 客户端开发包</a></div>
+																<div class="footer_cont_margin"><a href="/cn/solutions/voice-video-engine.htm" target="">音视频引擎</a></div>
+																<div class="footer_cont_margin"><a href="/cn/solutions/poc-client.htm" target="">PoC 客户端开发包</a></div>
+																<div class="footer_cont_margin"><a href="/cn/solutions/poc-server.htm" target="">服务器</a></div>
+																					</div>
+									<div align="left" class="footer_left_kd">&nbsp;</div>
+			<div align="left" class="footer_left">
+														<div><span class="footer_title">产品</span></div>
+								<div class="footer_title_xian"></div>
+																<div class="footer_title_margin"><a href="/cn/products/jusrcs.htm" target="">JusRCS 客户端</a></div>
+																<div class="footer_cont_margin"><a href="/cn/products/joyn.htm" target="">joyn 客户端</a></div>
+																<div class="footer_cont_margin"><a href="https://justalk.com/cn/" target="_blank">JusTalk 网络电话</a></div>
+																<div class="footer_cont_margin"><a href="/cn/products/justex.htm" target="">JusTex 软电话</a></div>
+																							<div class="footer_title_margin4"><span class="footer_title">行业解决方案</span></div>
+								<div class="footer_title_xian"></div>
+																<div class="footer_title_margin"><a href="/cn/solutions/virtual-operators.htm" target="">虚拟运营商</a></div>
+																<div class="footer_cont_margin"><a href="/cn/solutions/mobile-call-center.htm" target="">移动呼叫中心</a></div>
+																<div class="footer_cont_margin"><a href="/cn/solutions/mobile-travel.htm" target="">移动旅游</a></div>
+																					</div>
+										<div align="left" class="footer_left_kd">&nbsp;</div>
+			<div align="left" class="footer_left">
+														<div><span class="footer_title">产品技术</span></div>
+								<div class="footer_title_xian"></div>
+																<div class="footer_title_margin"><a href="/cn/solutions/zos.htm" target="">ZOS</a></div>
+																<div class="footer_cont_margin"><a href="/cn/solutions/abnf.htm" target="">ABNF</a></div>
+																<div class="footer_cont_margin"><a href="/cn/solutions/xml.htm" target="">XML</a></div>
+																<div class="footer_cont_margin"><a href="/cn/solutions/sip.htm" target="">SIP</a></div>
+																<div class="footer_cont_margin"><a href="/cn/solutions/sdp.htm" target="">SDP</a></div>
+																<div class="footer_cont_margin"><a href="/cn/solutions/rtp-rtcp.htm" target="">RTP/RTCP</a></div>
+																<div class="footer_cont_margin"><a href="/cn/solutions/msrp.htm" target="">MSRP</a></div>
+																					</div>
+										<div align="left" class="footer_left_kd">&nbsp;</div>
+			<div align="left" class="footer_left">
+														<div><span class="footer_title">专长</span></div>
+								<div class="footer_title_xian"></div>
+																<div class="footer_title_margin"><a href="/cn/about/expertise-voip.htm" target="">VoIP 和移动 VoIP</a></div>
+																<div class="footer_cont_margin"><a href="/cn/about/expertise-ims.htm" target="">IMS</a></div>
+																<div class="footer_cont_margin"><a href="/cn/about/expertise-rcs.htm" target="">RCS 和 joyn</a></div>
+																<div class="footer_cont_margin"><a href="/cn/about/expertise-media.htm" target="">音视频引擎</a></div>
+																							<div class="footer_title_margin4"><span class="footer_title">菊风公司</span></div>
+								<div class="footer_title_xian"></div>
+																<div class="footer_title_margin"><a href="/cn/about/" target="">关于我们</a></div>
+																<div class="footer_cont_margin"><a href="/cn/contact/" target="">联系我们</a></div>
+																					</div>
+								
+<div class="clear_left"></div>
+</div>
+<div class="footer_cont_kd"></div>
+<div class="footer_title_xian"></div>
+<div align="left" class="footer_leg_div">
+<div class="footer_leg_kd"></div>
+<div class="body-contant"><span class="footer_c">版权©2017 宁波菊风系统软件有限公司。未经允许不得以任何方式和手段进行复制和使用</span> <span class="footer_leg">  </span> <a href=""><span class="footer_leg" onmouseover="this.className='footer_leg_over'" onmouseout="this.className='footer_leg'"></span></a></div>
+</div>
+</div>
+</div>
+<!-- footer end --></div>        
+    </div>
+    	<div id="contact_button" onclick="show_tel()"></div>
+    <div id="tel_detail" class="tel_detail">
+        <div style="height:30px;width:320px;"><img onclick="close_tel()" style="float:right" src="/images/2/1/6/2/a/2162a4ba4813d8b936b82d32afab2393a1dc3ad0-tel-close.png"></div>
+        <div id="detail_tel1" class="tel_detail_kuang" style="height:350px">
+            <div style="width:100%;height:10px;"></div>
+            <h5 style="margin-top:20px;margin-bottom: 10px;font-family: inherit;font-weight: 500;color:#333;line-height:20px;text-align:left;font-size:14px;padding-left:15px">
+            <img style="margin-bottom: 3px;margin-right:5px;vertical-align: middle;display:inline;" src="/images/6/7/f/b/e/67fbeec487b44c8eefa2735d6f1177ccac4dd3eb-onlineb.png">咨询电话</h5>
+            <h5 style="margin-top:10px;color:#333;line-height:20px;text-align:left;font-size:14px;font-weight: 500;padding-left:20px">0574-87287820转500</h5>
+            <h5 style="margin-top:10px;color:#333;line-height:20px;text-align:left;font-size:14px;font-weight: 500;padding-left:20px">咨询邮箱：sales@juphoon.com</h5>
+            <h5 style="color:#747474;line-height:20px;text-align:left;font-size:12px;margin-left:-5px;margin-bottom:14px;font-weight: 500;"><img style="visibility: hidden;margin-right:5px;display:inline;" src="/images/c/9/c/8/5/c9c8542e11692ef68a62157f788c4e22ecafd235-other-01.png">或留下您的信息，稍后我们会与您联系！</h5>
+            <input id="nick" style="width:285px;border:1px solid #bcbcbc;border-radius:2px;height:30px;line-height:30px;font-size:14px;padding:0 5px;" placeholder="称呼">
+            <input id="company" style="width:285px;margin-top:14px;border:1px solid #bcbcbc;border-radius:2px;height:30px;line-height:30px;font-size:14px;padding:0 5px;" placeholder="公司">
+            <input id="phone" style="width:285px;margin-top:14px;border:1px solid #bcbcbc;border-radius:2px;height:30px;line-height:30px;font-size:14px;padding:0 5px;" placeholder="手机">
+            <button onclick="submit_tel_info()" style="float:right;height:30px;margin-top:16px;margin-right:16px;border-radius:2px;font-size:14px;line-height:29px;color:#fff;cursor:pointer;padding: 0 40px;border:0 none;" class="button button-raised button-primary" id="sub_product_advice">提交</button>
+        </div>
+    </div>
+	<a id="qq_button" target="blank" href="http://wpa.qq.com/msgrd?v=3&uin=799866933&site=qq&menu=yes"></a>            
+        
+    </body>
+</html>

@@ -1,0 +1,638 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="zh" style="font-size: 36px;">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+		<title>JusTalk Cloud 移动音视频通讯云 -- 高清音视频互动解决方案领导者</title>
+		<meta name="keywords" content=" VoIP网络电话，即时通讯SDK，即时通讯API，视音频即时通讯，云通讯，IM云服务，IM即时通讯，语音会议，视频会议，云通讯平台，视频直播系统方案，视频会议解决方案，跨平台即时通讯" />
+		<meta name="description" content="JusTalk Cloud移动音视频通讯云为企业和应用开发者提供IM即时通讯、音视频通讯、音视频通讯、视频直播、视频会议、视频互动等通讯能力，通过嵌入云通讯API组件，快速接入各类应用，轻松实现云通讯" />
+
+			<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="applicable-device"content="pc,mobile" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+	<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+	<link rel="Bookmark" href="../../favicon.ico" />
+	<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="../lib/lib.css">
+	<link rel="stylesheet" href="../lib/app.css">
+	<link rel="stylesheet" href="../lib/header.css?v=20170608">
+	<link rel="stylesheet" href="../lib/second-header.css?v=20170608">
+	<link rel="stylesheet" href="../lib/button.css">
+	<link rel="stylesheet" href="../lib/animate.min.css">
+    <div id="shareImage" style="display: none;">
+   	    <img src="../images/share_logo.png" />
+    </div>
+    <script>
+    (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='../shim.d97a38b5.js';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+
+    window.intercomSettings = {
+    	app_id: 'i6aia6ey',
+    	//name: "", // Full name
+    	//email: "", // Email address
+    	// created_at: 1482105600 // Signup date as a Unix timestamp
+  	};
+    </script>
+</head>
+<style type="text/css">
+    @keyframes flash {
+        0%{opacity: 0; }
+        100%{opacity: 1;  }
+     }
+     
+    /*.site-header .switch-locale#private_cloud .dropdown-toggle:before {
+        position: absolute;
+        content: "";
+        display: inline-block;
+        vertical-align: top;
+        right: 26px;
+        width: 18px;
+        height: 10px;
+        background: url('/cn/images/header_icon_hot.png') top center no-repeat;
+        margin-top: -6px;
+    }*/
+</style>
+<body class="page-index  zh" >
+	<!--在线咨询-->
+	<div id="tel" class="tel_online" onclick="online_tel()">
+	</div>
+	<div id="tel_detail" class="tel_detail" style="display:none">
+		<div style="height:30px;width:320px;"><img onclick="close_tel()" style="float:right" src="../images/tel-close.png"/></div>
+		<div id="detail_tel1" class="tel_detail_kuang"  >
+			<div style="width:100%;height:10px;"></div>
+			<h5 style="margin-top:20px;color:#333;line-height:20px;text-align:left;font-size:14px;padding-left:15px"><img style="margin-bottom: 3px;margin-right:5px" src="../images/onlineB.png">咨询电话</h5>
+			<h5 style="margin-top:10px;color:#333;line-height:20px;text-align:left;font-size:14px;padding-left:20px">0574-87287820转800</h5>
+			<h5 style="margin-top:10px;color:#333;line-height:20px;text-align:left;font-size:14px;padding-left:20px">010-84714322</h5>
+			<h5 style="color:#747474;line-height:20px;text-align:left;font-size:12px;margin-left:-5px;margin-bottom:14px"><img style="visibility: hidden;margin-right:5px" src="../images/other-01.png">或留下您的信息，稍后我们会与您联系！</h5>
+			<input id="nick" style="width:285px;border:1px solid #bcbcbc;border-radius:2px;height:30px;line-height:30px;font-size:14px;padding:0 5px;" placeholder="称呼" />
+			<input id="company" style="width:285px;margin-top:14px;border:1px solid #bcbcbc;border-radius:2px;height:30px;line-height:30px;font-size:14px;padding:0 5px;" placeholder="公司" />
+			
+			<input id="phone" style="width:285px;margin-top:14px;border:1px solid #bcbcbc;border-radius:2px;height:30px;line-height:30px;font-size:14px;padding:0 5px;" placeholder="手机" />
+			<button onclick="submit_tel_info('../')" style="float:right;height:30px;margin-top:16px;margin-right:16px;border-radius:2px;font-size:14px;line-height:29px;color:#fff;cursor:pointer;" class="button button-raised button-primary" id="sub_product_advice">提 交</button>
+		</div>
+		<div id="detail_tel2" class="tel_detail_kuang" style="display:none">
+			<div style="width:100%;height:65px;"></div>
+			<h5 style="color:#333;line-height:30px;text-align:center">感谢您的提交，请保持手机畅通，</h5>
+			<h5 style="color:#333;line-height:30px;text-align:center">我们稍后会与您取得联系。</h5>
+		</div>
+	</div>
+	<!--主页面头部-->
+	<header id="site-header"  class="site-header" style="height:60px">
+		<div class="container">
+			<nav class="navbar" role="navigation">
+				<div class="navbar-header">
+	
+					<button  class="btn btn-primary navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">菜单</button>
+
+					<a class="navbar-brand" href="http://www.justalkcloud.com/cn/" data-gta="event" data-category="out-top-nav" data-action="tb logo">JusTalk Cloud 云通讯</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<div class="items-wrap">
+						
+							<ul class="navbar-button list-inline">
+								<li>
+									<a class="btn btn-default btn-sm login" href="http://www.justalkcloud.com/cn/login/signin.php" data-gta="event" data-category="out-top-nav" data-action="login">登录</a>
+								</li>
+								<li>
+									<a id="free_signup" class="btn btn-default btn-sm signup" href="http://www.justalkcloud.com/cn/login/signup.php" data-gta="event" data-category="out-top-nav" data-action="signup">免费注册</a>
+								</li>
+							</ul> 					<ul class="nav navbar-nav header-line">
+						<li class="header_new_remind_li">
+							<a href="http://www.justalkcloud.com/cn/bbs/" data-gta="event" data-category="out-top-nav">技术支持
+							<div  class="bbs-static-line header-static-line none"></div></a>
+							<div class="header_new_remind text-center">
+								<div class="header_new_remind_triangle"></div>
+								<div class="header_new_remind_text">
+									您的帖子<span class="header_new_remind_theme">123</span>有<span class="header_new_remind_count">2</span>条新回复
+								</div>
+								<div class="pull-right header_new_remind_close">
+									<img src="../images/close_remind.png" alt="" />
+								</div>
+							</div>
+						</li>
+					</ul>
+			
+					<ul class="navbar-button list-inline">
+						<li class="switch-locale-wrap" >
+							<div class="dropdown switch-locale header-locale" style="margin-left:-32px;margin-right:-15px" id="docs">
+								<div class="header-line">
+									<a style="cursor:default" href="javascript:void(0)" class="dropdown-toggle zh header_docs" data-toggle="" >文档</a>
+								</div>
+								<ul  id="" class="dropdown-menu docs-header" role="menu" aria-labelledby="dLabel" >
+									<li class="left_menu_title"><div href="" ><div  style="float:left;margin-left:16px;color:#A6A29D;margin-top:12px;margin-bottom:3px;font-size:14px;cursor:default">SDK</div><div style="clear:both;"></div></div></li>
+									<li class="left_menu_detail" value="1" class="product_menu"><a target="_blank" href="http://www.justalkcloud.com/cn/docs/android/"><div style="float: left;"><div class="sdk-android"></div></div><div style="float:left;">Android SDK</div><div style="clear:both;"></div></a></li>
+									<li class="left_menu_detail" value="2" class="product_menu"><a target="_blank" href="http://www.justalkcloud.com/cn/docs/ios/" ><div style="float: left;"><div class="sdk-ios"></div></div><div style="float:left;">iOS SDK</div><div style="clear:both;"></div></a></li>
+									<li class="left_menu_detail" value="3" class="product_menu"><a target="_blank" href="http://www.justalkcloud.com/cn/docs/windows/"><div style="float: left;"><div class="sdk-windows"></div></div><div style="float:left;">Windows SDK</div><div style="clear:both;"></div></a></li>
+									<!-- 右边menu -->
+									<li class="right_menu_title" style="margin-top:-160px;float:right"><div href="" ><div style="float:left;margin-left:12px;margin-top:16px;font-size:14px;color:#A6A29D;cursor:default">API</div><div style="clear:both;"></div></div></li>
+									<li class="right_menu_detail" style="margin-top:-120px;float:right"><a target="_blank" href="http://www.justalkcloud.com/cn/docs/android-api/" ><div style="float: left;"><div class="sdk-android"></div></div><div style="float:left;">Android API</div><div style="clear:both;"></div></a></li>
+									<li class="right_menu_detail" style="margin-top:-80px;float:right"><a target="_blank" href="http://www.justalkcloud.com/cn/docs/ios-api/" ><div style="float: left;"><div class="sdk-ios"></div></div><div style="float:left;">iOS API</div><div style="clear:both;"></div></a></li>
+									<li class="right_menu_detail" style="margin-top:-40px;float:right"><a target="_blank" href="http://www.justalkcloud.com/cn/docs/windows-api/" ><div style="float: left;"><div class="sdk-windows"></div></div><div style="float:left;">Windows API</div><div style="clear:both;"></div></a></li>
+								</ul>
+								<!-- <ul class="dropdown-menu  two-number" role="menu" aria-labelledby="dLabel" id="docs_ul">
+                                    <li><a target="_blank" href="http://www.justalkcloud.com/cn/docs/android/"><div style="float: left;"><div class="sdk-android"></div></div><div style="float:left;">Android SDK</div><div style="clear:both;"></div></a></li>
+                                    <li><a target="_blank" href="http://www.justalkcloud.com/cn/docs/ios/" ><div style="float: left;"><div class="sdk-ios"></div></div><div style="float:left;">iOS SDK</div><div style="clear:both;"></div></a></li>
+                                    <li><a target="_blank" href="http://www.justalkcloud.com/cn/docs/windows/"><div style="float: left;"><div class="sdk-windows"></div></div><div style="float:left;">Windows SDK</div><div style="clear:both;"></div></a></li>
+								</ul> -->
+							</div>
+						</li>
+					</ul>
+					<ul class="navbar-button list-inline">
+						<li class="switch-locale-wrap" >
+							<div class="dropdown switch-locale header-locale" style="margin-left:-32px;margin-right:-15px" id="download">
+								<div class="header-line">
+									<a  style="cursor:default" href="javascript:void(0)" class="dropdown-toggle  zh header_download" data-toggle="" >下载
+										<div  class="download-static-line header-static-line none"></div></a>
+								</div>
+								<ul class="dropdown-menu two-number" role="menu" aria-labelledby="dLabel" id="download_ul">
+									<li><a href="http://www.justalkcloud.com/cn/download/#SDK" ><div style="float: left;"><div class="sdk_downlad"></div></div><div style="float:left;">SDK下载</div><div style="clear:both;"></div></a></li>
+									<li><a href="http://www.justalkcloud.com/cn/download/#experience" ><div style="float: left;"><div class="experience"></div></div><div style="float:left;">应用体验</div><div style="clear:both;"></div></a></li>
+									<li><a style="height:45px" href="http://www.justalkcloud.com/cn/download/#plan" ><div style="float: left;"><div class="plan"></div></div><div style="float:left;">方案下载</div><div style="clear:both;"></div></a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav header-line">
+						<li>
+							<a href="http://www.justalkcloud.com/cn/price/" data-gta="event" data-category="out-top-nav" id="price">价格
+							<div class="price-static-line header-static-line none"></div>
+							</a>
+						</li>
+					</ul>
+					</ul>
+					<ul class="nav navbar-nav header-line">
+						<li>
+							<a href="http://www.justalkcloud.com/cn/stories/" data-gta="event" data-category="out-top-nav" id="case">案例
+							<div  class="stories-static-line header-static-line none"></div></a>
+						</li>
+					</ul>
+                    
+                    <ul class="nav navbar-nav header-line">
+                        <li class="header_new_remind_li">
+                            <a href="http://www.justalkcloud.com/cn/unified/" data-gta="event" data-category="out-top-nav" class="private-cloud-text" id="unified-communication">统一通信
+                            <div  class="unified-static-line header-static-line none"></div></a>
+                            <div class="header_new_remind text-center">
+                                <div class="header_new_remind_triangle"></div>
+                                <div class="header_new_remind_text">
+                                    您的帖子<span class="header_new_remind_theme">123</span>有<span class="header_new_remind_count">2</span>条新回复
+                                </div>
+                                <div class="pull-right header_new_remind_close">
+                                    <img src="../images/close_remind.png" alt="" />
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+					<ul class="nav navbar-nav header-line">
+						<li class="aaa">
+							<a href="http://www.justalkcloud.com/cn/solution/e-learning.php" data-gta="event" data-category="out-top-nav" id="e-learning-cloud">教育云
+                            <div  class="learning-static-line header-static-line none"></div></a>
+							</a>
+						</li>
+					</ul>
+					<ul class="navbar-button list-inline">
+                        <li class="switch-locale-wrap">
+                            <div class="dropdown switch-locale header-locale" style="margin-left:-32px;margin-right:-15px" id="private_cloud">
+                                <div class="header-line">
+                                	<!-- <img class="private-hot"  src="/cn/images/private-hot.png" alt="" /> -->
+                                    <a href="http://www.justalkcloud.com/cn/private_cloud/" class="dropdown-toggle zh header_private_cloud private-cloud-text" data-toggle="" id="private_cloud_main">私有云
+                                    <div  class="private-static-line header-static-line none"></div></a>
+                                </div>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" id="private_cloud_ul">
+                                	<li class="mobile-show"><a href="http://www.justalkcloud.com/cn/private_cloud/" ><div style="float: left;"><div class="header-show-img"></div></div>
+                                    <div style="float:left;" class="m-l-10">私有云首页</div>
+                                    <div style="clear:both;"></div></a></li>
+                                    <li><a style="height:45px" href="http://www.justalkcloud.com/cn/private_cloud/service/" ><div style="float: left;"><div class="video_service"></div></div>
+                                    <div style="float:left;" class="service">视频客服</div>
+                                    <div style="clear:both;"></div></a></li>
+                                    
+                                    <li><a href="http://www.justalkcloud.com/cn/private_cloud/meeting/" ><div style="float: left;"><div class="newsletters"></div></div>
+                                    <div style="float:left;" class="meeting">企业会议</div>
+                                    <div style="clear:both;"></div></a></li>
+                                    <li><a href="http://www.justalkcloud.com/cn/private_cloud/tools/" ><div style="float: left;"><div class="communication_tools"></div></div>
+                                    <div style="float:left;" class="tools">通信工具</div>
+                                    <div style="clear:both;"></div></a></li>
+                                    <li><a style="height:45px" href="http://www.justalkcloud.com/cn/private_cloud/intercom/" ><div style="float: left;"><div class="intelligent_intercom"></div></div>
+                                    <div style="float:left;" class="intercom">智能对讲</div>
+                                    <div style="clear:both;"></div></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+					<ul class="navbar-button list-inline" style="margin-right:-10px">
+						<li class="switch-locale-wrap" >
+							<div class="dropdown switch-locale header-locale">
+								<div class="header-line">
+									<a href="http://www.justalkcloud.com/cn/product/" id="product" class="dropdown-toggle zh" data-toggle="">产品
+									<div  class="product-static-line header-static-line none"></div>
+									</a>
+								</div>
+								<ul  id="sss" class="dropdown-menu" role="menu" aria-labelledby="dLabel" >
+									<li class="left_menu_title"><div href="" ><div  style="float:left;margin-left:16px;color:#A6A29D;margin-top:12px;margin-bottom:3px;font-size:14px;cursor:default">产品</div><div style="clear:both;"></div></div></li>
+									<li class="left_menu_detail" value="1" class="product_menu"><a href="http://www.justalkcloud.com/cn/product/#audio" ><div style="float: left;"><div class="audio"></div></div><div style="float:left;" id="audio_talk" class="left_menu">语音通话</div><div style="clear:both;"></div></a></li>
+
+									<li class="left_menu_detail" value="2" class="product_menu"><a href="http://www.justalkcloud.com/cn/product/#video" ><div style="float: left;"><div class="video"></div></div><div style="float:left;" id="video_talk" class="left_menu">视频通话</div><div style="clear:both;"></div></a></li>
+
+									<li class="left_menu_detail" value="3" class="product_menu"><a href="http://www.justalkcloud.com/cn/product/#im" ><div style="float: left;"><div class="im"></div></div><div style="float:left;" id="im_message" class="left_menu">IM 消息</div><div style="clear:both;"></div></a></li>
+
+									<li class="left_menu_detail" value="4" class="product_menu"><a href="http://www.justalkcloud.com/cn/product/#live" ><div style="float: left;"><div class="live"></div></div><div style="float:left;" id="live_telecast" class="left_menu">互动直播</div><div style="clear:both;"></div></a></li>
+
+									<li class="left_menu_detail" value="5" class="product_menu"><a href="http://www.justalkcloud.com/cn/product/#conference" ><div style="float: left;"><div class="conference"></div></div><div style="float:left;" id="meeting" class="left_menu">会议</div><div style="clear:both;"></div></a></li>
+
+									<!-- 右边menu -->
+									<li class="right_menu_title" style="margin-top:-239px;float:right"><div href="" ><div style="float:left;margin-left:12px;margin-top:16px;font-size:14px;color:#A6A29D;cursor:default">应用场景</div><div style="clear:both;"></div></div></li>
+									<li class="right_menu_detail" style="margin-top:-200px;float:right"><a href="http://www.justalkcloud.com/cn/scenario/e-learning.php" ><div style="float: left;"><div class="jy"></div></div><div style="float:left;" id="e-learning">在线教育</div><div style="clear:both;"></div></a></li>
+
+									<li class="right_menu_detail" style="margin-top:-160px;float:right"><a href="http://www.justalkcloud.com/cn/scenario/mhealth.php"><div style="float: left;"><div class="yl"></div></div><div style="float:left;" id="mhealth">智慧医疗</div><div style="clear:both;"></div></a></li>
+
+									<li class="right_menu_detail" style="margin-top:-120px;float:right"><a href="http://www.justalkcloud.com/cn/scenario/social_im.php"><div style="float: left;"><div class="sjtx"></div></div><div style="float:left;" id="social_im">社交通讯</div><div style="clear:both;"></div></a></li>
+
+									<li class="right_menu_detail" style="margin-top:-80px;float:right"><a href="http://www.justalkcloud.com/cn/scenario/o2o.php" ><div style="float: left;"><div class="o2o"></div></div><div style="float:left;" id="o2o">O2O</div><div style="clear:both;"></div></a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+			</div>
+		</div>
+	</nav>
+</div>
+</header>
+
+<script src="../lib/jquery-1.8.3.min.js"></script>
+<script src="../lib/lib.js"></script>
+<script src="../lib/other.js"></script>
+<script src="../lib/header.js?v=20170608"></script>
+<script src="../lib/jqueryrotate.js"></script>
+<script src="../js/jc_api_ex.js"></script>
+
+<!--[if lt IE 9]> <script src="../lib/ie/html5shiv.js" cache="false"></script> <script src="../lib/ie/respond.min.js" cache="false"></script> <script src="../lib/ie/excanvas.js" cache="false"></script> <![endif]-->
+
+
+<div style="clear:both"></div>
+<div style="width:100%;min-height:550px;text-align:center;background:url('../images/shangwuda-01.jpg') center center;">
+    <div class="container text-center" style="padding-top:250px;">
+				<h1 style="font-size:50px;color:#fff"><br class="visible-xxs">JusTalk Cloud</h1>
+				<h2 style="color:#fff"><br class="visible-xxs">全力支持还在坚持梦想的你</h2>
+
+	</div>
+</div>
+
+<div  style="width:100%;background:#fff;">
+    <div class="container text-center" style="padding-top:50px;">
+      <div class="row" style="height:180px;color:#fff;padding-left:15%;padding-right:15%;">
+ <div class="col-md-2 col-md-offset-0 col-xs-4">
+          <a href="http://www.justalkcloud.com/cn/about/">
+            <div class="guanyu1">
+              <h4 style="padding-top:88px">关于云通讯</h4>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-2 col-xs-4 hidden-xs">
+          <a href="http://www.justalkcloud.com/cn/business/">
+            <div class="shangwu2">
+              <h4 style="padding-top:88px">联系我们</h4>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-2 col-xs-4">
+          <a href="http://www.justalkcloud.com/cn/recruitment/">
+            <div class="jiaru1">
+              <h4 style="padding-top:88px">加入我们</h4>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-2 col-xs-4 news_report">
+          <a href="http://www.justalkcloud.com/cn/news/">
+            <div class="meiti1">
+              <h4 style="padding-top:88px">媒体报道</h4>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-2 col-xs-4">
+          <a href="http://www.justalkcloud.com/cn/chain/">
+            <div class="youqing1">
+              <h4 style="padding-top:88px">合作网站</h4>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-2 col-xs-4">
+       		<a href="http://justalkcloud.lofter.com/">
+       		<div class="SDK1">
+        			<h4 style="padding-top:88px">SDK Beta版</h4>
+            </div>
+          </a>
+        </div> 
+      </div>
+      <div class="clearfix"></div>
+      <div class="row">
+  		    <div class="col-sm-8 col-sm-offset-2 col-xs-12">
+  				<div style="margin-top:30px;width:100%;height:40px;">
+  				<!-- <img src="./shangwu.png"/> -->
+          <!-- <h2>JusTalk Cloud移动音视频通讯云</h2> -->
+  				</div>
+  				<!-- <h4 style="line-height:32px;font-size:16px;margin-top:54px;">
+  					JusTalk Cloud 团队多种形式的商务合作，及各种创新的合作模式
+  				</h4> -->
+  			</div>
+  		</div>
+      <div class="row" style="padding-bottom:20px;border-bottom:1px dashed #bcbcbc;margin-left:15%;margin-right:15%;">
+				<div class="col-md-1"  style="text-align:center">
+				</div>
+				<div class="col-md-11"  style="text-align:left">
+					<a style="cursor: default;">
+						<h3 style="text-align:left;color:#333;line-height:30px;margin-top:0px;margin-bottom:20px;font-weight: 400;font-size:23px;">宁波菊风系统软件有限公司</h3>
+					</a>
+					 <h5 style="text-align:left;color:#666;line-height:24px">产品咨询：sales@justalkcloud.com</h5>
+                     <h5 style="text-align:left;color:#666;line-height:24px;">技术交流 : <a href="http://www.justalkcloud.com/cn/bbs/">
+            <span style="text-align:left;color:#1ea1e8;line-height:24px">  进入支持> </span>
+          </a>
+          </h5>
+          <h5 style="text-align:left;color:#666;line-height:24px">（您的技术问题通常可以在12个工作时得到解答）</h5>
+         			 <!-- <h5 style="text-align:left;color:#666;line-height:24px">云通讯业务咨询：010-84714322</h5>
+                 <h5 style="text-align:left;color:#666;line-height:24px">商务及推广合作：0574-87287820-800</h5> -->
+          			 <h5 style="text-align:left;color:#666;line-height:24px">咨询电话：0574-87287820-800， 010-84714322</h5>
+          			 <!-- <h5 style="text-align:left;color:#666;line-height:24px">地址：浙江省宁波市高新区新晖路682号华之建筑大厦204</h5> -->
+					 <h5 style="text-align:left;color:#666;line-height:24px">（周一至周五 9:30 ~ 18:00）</h5><br/>
+         			 <h5 style="text-align:left;color:#666;line-height:24px">宁波总部：宁波市高新区新晖路682号华之大厦2楼</h5>
+          			 <h5 style="text-align:left;color:#666;line-height:24px">北京分公司：北京市朝阳区阜安西路望京 SOHO 中心 T2B 座2502室</h5>
+				</div>
+			</div>
+      <div class="row" style="padding-bottom:20px;border-bottom:1px dashed #bcbcbc;margin-left:15%;margin-right:15%;padding-top:60px;">
+				<div class="col-md-1"  style="text-align:center">
+				</div>
+				<div class="col-md-11"  style="text-align:left">
+					<a style="cursor: default;">
+						<h3 style="text-align:left;color:#333;line-height:30px;margin-top:0px;margin-bottom:20px;font-weight: 400;font-size:23px;">全国线下合作（展会合作、线下活动）</h3>
+					</a>
+          <h5 style="text-align:left;color:#666;line-height:24px">邮箱：zhaohui.wang@juphoon.com.cn</h5>
+				</div>
+			</div>
+      <div class="row" style="padding-bottom:20px;border-bottom:1px dashed #bcbcbc;margin-left:15%;margin-right:15%;padding-top:60px">
+				<div class="col-md-1"  style="text-align:center">
+				</div>
+				<div class="col-md-11"  style="text-align:left">
+					<a style="cursor: default;">
+						<h3 style="text-align:left;color:#333;line-height:30px;margin-top:0px;margin-bottom:20px;font-weight: 400;font-size:23px;">市场/品牌合作（品牌合作、联合推广、PR合作、资源置换等）</h3>
+					</a>
+          <h5 style="text-align:left;color:#666;line-height:24px">邮箱：zhaohui.wang@juphoon.com.cn</h5>
+				</div>
+			</div>
+      <div class="row" style="padding-bottom:20px;border-bottom:1px dashed #bcbcbc;margin-left:15%;margin-right:15%;padding-top:60px">
+				<div class="col-md-1"  style="text-align:center">
+				</div>
+				<div class="col-md-11"  style="text-align:left">
+					<a style="cursor: default;">
+						<h3 style="text-align:left;color:#333;line-height:30px;margin-top:0px;margin-bottom:20px;font-weight: 400;font-size:23px;">分销/集成（分销进行合作的共赢模式或将我们的服务集成相应服务体系,进行优秀资源整合）</h3>
+					</a>
+          <h5 style="text-align:left;color:#666;line-height:24px">邮箱：sales@justalkcloud.com</h5>
+				</div>
+			</div>
+	        <!-- <div class="row" style="padding-bottom:20px;border-bottom:1px dashed #bcbcbc;margin-left:15%;margin-right:15%;padding-top:60px">
+				<div class="col-md-1"  style="text-align:center">
+				</div>
+				<div class="col-md-11"  style="text-align:left">
+					<a style="cursor: default;">
+						<h3 style="text-align:left;color:#333;line-height:30px;margin-top:0px;margin-bottom:20px;font-weight: 400;font-size:23px;">友情链接/SEO合作（网站添加友情链接入口,SEO合作等）</h3>
+					</a>
+					<h5 style="text-align:left;color:#666;line-height:24px">邮箱：zhaohui.wang@juphoon.com.cn</h5>
+				</div>
+	 </div> -->
+	       <div class="row" style="padding-bottom:60px;margin-left:15%;margin-right:15%;padding-top:60px">
+				<div class="col-md-1"  style="text-align:center">
+				</div>
+				<div class="col-md-11"  style="text-align:left">
+					<a style="cursor: default;">
+						<h3 style="text-align:left;color:#333;line-height:30px;margin-top:0px;margin-bottom:20px;font-weight: 400;font-size:23px;">问题反馈</h3>
+					</a>
+          <h5 style="text-align:left;color:#666;line-height:24px">支持邮箱：support@justalkcloud.com</h5>
+				</div>
+			</div>
+	 
+				</div>
+	 </div>
+
+  </div>
+
+<div style="clear:both;"></div>
+<style type="text/css">
+.frontpage_footer{
+	width:22% ! important;
+	margin-left: 1%;
+}
+.footer_en_lang{
+	color:#666;
+}
+.footer_en_lang:hover {
+	cursor: pointer;
+	color: #fff;
+}
+
+@media (max-width: 768px) {
+	.footer_lang{
+		margin-bottom: 20px ! important;
+	}
+}
+</style>
+<footer class="site-footer hack-webkit-render">
+	<div class="container max1010">
+		<div class="row footer-nav">
+			<div class="col-md-12 clearfix">
+			<ul class="nav-group" style="width:18%">
+					<h4>产品</h4>
+					<li>
+						<a  href="http://www.justalkcloud.com/cn/product/#audio" data-gta="event" data-category="out-footer" >语音通话</a>
+					</li>
+					<li>
+						<a href="http://www.justalkcloud.com/cn/product/#video" data-gta="event" data-category="out-footer" >视频通话</a>
+					</li>
+					<li>
+						<a href="http://www.justalkcloud.com/cn/product/#im" data-gta="event" data-category="out-footer" >IM消息</a>
+					</li>
+					<li>
+						<a  href="http://www.justalkcloud.com/cn/product/#live"data-gta="event" data-category="out-footer" >互动直播</a>
+					</li>
+					<li>
+						<a href="http://www.justalkcloud.com/cn/product/#conference" data-gta="event" data-category="out-footer" >音视频会议</a>
+					</li>
+				</ul>
+			<ul class="nav-group" style="width:18%">
+					<h4>场景与方案</h4>
+					<li>
+						<a href="http://www.justalkcloud.com/cn/scenario/e-learning" data-gta="event" data-category="out-footer" >在线教育</a>
+					</li>
+					<li>
+						<a  href="http://www.justalkcloud.com/cn/scenario/mhealth" data-gta="event" data-category="out-footer" >智慧医疗</a>
+					</li>
+					<li>
+						<a href="http://www.justalkcloud.com/cn/scenario/social_im" target="_blank"  data-gta="event" data-category="out-footer" >社交通讯</a>
+					</li>
+					<li>
+						<a  href="http://www.justalkcloud.com/cn/scenario/o2o" data-gta="event" data-category="out-footer" >O2O</a>
+					</li>
+				</ul>
+				<ul class="nav-group" style="width:18%;height:176px;">
+					<h4>开发者服务</h4>
+					<li>
+						<a  href="http://www.justalkcloud.com/cn/docs/" target="_blank" data-gta="event" data-category="out-footer" >开发文档</a>
+					</li>
+					<li>
+						<a  href="http://www.justalkcloud.com/cn/faq/index.php" data-gta="event" data-category="out-footer" >常见问题</a>
+					</li>
+					<li>
+						<a  href="http://www.justalkcloud.com/cn/bbs/" data-gta="event" data-category="out-footer" >社区</a>
+					</li>
+				</ul>
+
+				<ul class="nav-group" style="width:18%;height:176px;">
+					<h4>关于我们</h4>
+					<li>
+						<a href="http://www.justalkcloud.com/cn/about/" data-gta="event" data-category="out-footer" >关于云通讯</a>
+					</li>
+					<li>
+						<a  href="http://www.justalkcloud.com/cn/business/" data-gta="event" data-category="out-footer" >联系我们</a>
+					</li>
+					<li>
+						<a  href="http://www.justalkcloud.com/cn/news/" data-gta="event" data-category="out-footer" >新闻报道</a>
+					</li>
+					<li>
+						<a  href="http://www.justalkcloud.com/cn/chain/" data-gta="event" data-category="out-footer" >合作网站</a>
+					</li>
+				</ul>
+				<ul class="nav-group" style="height:280px;width:28%" >
+					<h4>联系我们</h4>
+					<li>
+						<span>咨询电话：0574-87287820-800</span>
+					</li>
+					<li>
+						<span>产品咨询：sales@justalkcloud.com</span>
+					</li>
+					<li>
+						<span>技术支持：<a href="http://www.justalkcloud.com/cn/bbs/">
+            <span style="text-align:left;color:#AABDBD;line-height:24px">  进入支持> </span>
+          </a></span>
+					</li>
+					<li>
+						<span class="small">周一至周五 9:30 ~ 18:00</span>
+					</li>
+				</ul>
+				</div>
+			<center>
+				<ul class="nav-group" style="width:92%" >
+					<li class="footer_lang">
+						<center>
+						<img src="../images/language.png">
+						 							<a class="footer_en_lang" onclick="login_change_lang('zh','index.php','business','cn')" style="color:#fff;">中文(简体)</a> | <a class="footer_en_lang" onclick="login_change_lang('en','index.php','business','cn')">English</a>
+							<script src="..//lib/lang_extra.js"></script>
+													</center>
+					</li>
+					<li><span><center>
+			<div class="sns-info">
+			  <a onmouseover="xs_vcode('../')" onmouseout="yc_vcode('../')">
+				<div  class="icon" style="width:40px;height:40px;" >
+					<div id="wx_vcode" style="position:absolute;width:167px;height:182px;margin-left:-64px;margin-top:-181px;z-index:50;display:none"><img src="../images/public-06.png"/></div>
+					<img id="wx_img" src="../images/weixing-01.png"/>
+				</div>
+			  </a>
+				<!--微博-->
+			  <a href="http://weibo.com/p/1006065648167705/home?from=page_100606&mod=TAB#place" target="_blank">
+				<div  class="icon"style="margin-left:15px;width:40px;">
+					<img onmouseover="this.src='../images/weibo-01.png'" onmouseout="this.src='../images/weibo-01.png'" src="../images/weibo-01.png"/>
+				</div>
+			 </a>
+
+				<!--分享-->
+				<div class="icon" style="margin-left:15px;width:40px;cursor:pointer;" onmouseover="xz_shareways('../')"  onmouseout="qx_shareways('../')">
+					<img id="share_ways_img" src="../images/fenxiang-01.png"/>
+					<div style="height:3px;"></div>
+					<div id="share_ways" style="width:190px;height:59px;margin-left:-10px;margin-top:-90px;z-index:150;background:url('../images/share_bg_1.png');display:none">
+						<a href="http://twitter.com/home?status=http://justalkcloud.com&title=JusTalk&nbsp;Cloud" target="_blank">
+						<div style="float:left;width:30px;height:30px;margin-left:14px;margin-top:12px;">
+							<img onmouseover="this.src='../images/sharet_on.png'" onmouseout="this.src='../images/sharet_off.png'" src="../images/sharet_off.png"/>
+						</div>
+						</a>
+						<a rel="nofollow" href="http://www.facebook.com/sharer.php?u=http://justalkcloud.com&t=JusTalk&nbsp;Cloud" target="_blank">
+						<div style="float:left;width:30px;height:30px;margin-left:14px;margin-top:12px;">
+							<img onmouseover="this.src='../images/sharef_on.png'" onmouseout="this.src='../images/sharef_off.png'" src="../images/sharef_off.png"/>
+						</div>
+						</a>
+						<a href="http://connect.qq.com/widget/shareqq/index.html?title=JusTalk&nbsp;Cloud&url=http://justalkcloud.com" target="_blank">
+						<div style="float:left;width:30px;height:30px;margin-left:14px;margin-top:12px;">
+							<img onmouseover="this.src='../images/shareq_on.png'" onmouseout="this.src='../images/shareq_off.png'" src="../images/shareq_off.png"/>
+						</div>
+						</a>
+						<a href="http://service.weibo.com/share/share.php?title=JusTalk&nbsp;Cloud&url=http://justalkcloud.com" target="_blank">
+						<div style="float:left;width:30px;height:30px;margin-left:14px;margin-top:12px;">
+							<img onmouseover="this.src='../images/sharew_on.png'" onmouseout="this.src='../images/sharew_off.png'" src="../images/sharew_off.png"/>
+						</div>
+						</a>
+                        <div style="clear: both;"></div>
+					</div>
+                </div>
+                
+            </div>
+				</center></span></li>
+				<li><span><center><img src="../images/fangkuai-01.png">&nbsp;<a href="http://www.juphoon.com/"><span style="color:#606060;line-height:24px">&nbsp;&nbsp;Juphoon&nbsp;&nbsp;</span></a>&nbsp;&nbsp;<img src="../images/fangkuai-01.png"><a href="http://justalk.com/cn/"><span style="color:#606060;line-height:24px">&nbsp;&nbsp;JusTalk&nbsp;&nbsp;</span></a>&nbsp;&nbsp;<img src="../images/fangkuai-01.png">&nbsp;&nbsp;&nbsp;Copyright  © 2017 宁波菊风系统软件有限公司 | 浙ICP备15019097号</center></span></li>
+				</ul>
+                </center>
+			
+			</div>
+		</div>
+	</div>
+ 	<script src="..//lib/lang_extra.js"></script>
+   
+</footer>
+<script>
+//媒体报道每个页面添加一个 行业资讯
+	var url = window.location.pathname;
+	console.log(url);
+    var industry=$('<div></div>');        //创建一个父div
+    industry.addClass('col-md-2 col-xs-4');    //添加css样式
+    var childdiv=$('<a></a>');       //创建一个子div
+    childdiv.attr('href','/cn/industry')
+    industry.append(childdiv);        //将子div添加到父div中
+    var hangye1=$('<div></div>'); 
+    if(url.indexOf('/industry')>-1){
+    	hangye1.addClass('hangye2');    
+    }else{
+    	hangye1.addClass('hangye1');    
+    }     
+    childdiv.append(hangye1);        
+    var text = $('<h4 style="padding-top:88px">行业资讯</h4>');
+    hangye1.append(text);
+    $('.news_report').after(industry);
+function xs_vcode(tag){
+	document.getElementById('wx_vcode').style.display="";
+	document.getElementById('wx_img').src=tag+"images/weixing-01.png";
+}
+
+function yc_vcode(tag){
+	document.getElementById('wx_vcode').style.display="none";
+	document.getElementById('wx_img').src=tag+"images/weixing-01.png";
+}
+function xz_shareways(tag){
+	document.getElementById('share_ways').style.display="";
+	document.getElementById('share_ways_img').src=tag+"images/fenxiang-01.png";
+}
+
+function qx_shareways(tag){
+	document.getElementById('share_ways').style.display="none";
+	document.getElementById('share_ways_img').src=tag+"images/fenxiang-01.png";
+}
+
+</script>
+<div style='display:none'>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?233290b5b65373f614ad79227312b727";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</div>
+
+</body>
+</html>
